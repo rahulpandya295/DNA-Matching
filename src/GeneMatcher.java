@@ -10,7 +10,7 @@ public class GeneMatcher{
 				return -3;
 		}
 		else
-			return -4;
+			return -2;
 	}
 	public void Traceback(int i, int j, int Cost[][], String DNA1, String DNA2){
 		
@@ -52,9 +52,15 @@ public class GeneMatcher{
 		}
 		dna1=new StringBuilder(dna1).reverse().toString();
 		dna2=new StringBuilder(dna2).reverse().toString();
+		System.out.println("\nAllignment is");
 		System.out.println(dna1);
 		System.out.println(dna2);
-				
+		int x=dna1.length();
+		if(MatchCost<=0)
+			MatchCost=0;
+		MatchCost=(int)(MatchCost*100)/(5*x);
+		
+		System.out.println("\nDNA Matched " + MatchCost +"%");
 		RelationFinder relationfinder= new RelationFinder();
 		relationfinder.Relations(MatchCost);
 	}

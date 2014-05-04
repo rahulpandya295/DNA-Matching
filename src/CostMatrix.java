@@ -6,7 +6,6 @@ public class CostMatrix extends GeneMatcher{
 		m=DNA1.length();
 		n=DNA2.length();
 		
-		
 		int[][] Cost=new int[m+1][n+1];
 		for(int i=0;i<=m;i++){
 			Cost[i][0]=-4*i;
@@ -21,15 +20,8 @@ public class CostMatrix extends GeneMatcher{
 			
 			}
 		}
-		for(int i=0;i<=m;i++){
-			for(int j=0;j<=n;j++){
 				
-				System.out.print(Cost[i][j]+"\t");
-			}
-			System.out.println("\n");
-		}
 		Traceback(m,n,Cost, DNA1, DNA2);
-		System.out.println(m + " " + n + "\n");
 	}
 	
 }
